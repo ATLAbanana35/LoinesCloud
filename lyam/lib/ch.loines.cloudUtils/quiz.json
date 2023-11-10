@@ -1,0 +1,17 @@
+{
+  "Name": "Quiz-Online",
+  "Desc": "C'est un quiz où vous pouvez mettre VOS questions!",
+  "content": "quiz.zip",
+  "codename": "quiz",
+  "ext": ".zip",
+  "bundle": {
+    "version": "2.0"
+  },
+  "progress": 10,
+  "steps": {
+    "Vérification": 3,
+    "Copie du fichier source": 3,
+    "Execution du fichier source": 3,
+    "Mise en place du JSON source": 1
+  }
+}

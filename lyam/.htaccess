@@ -1,0 +1,6 @@
+<IfModule mod_php5.c>
+    SetEnvIf Request_URI "^/CLOUD/" PHP_PREPEND_FILE
+    <IfDefine PHP_PREPEND_FILE>
+        php_value auto_prepend_file "C:/hacking/www/auto.php"
+    </IfDefine>
+</IfModule>

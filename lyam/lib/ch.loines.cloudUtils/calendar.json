@@ -1,0 +1,17 @@
+{
+  "Name": "Loines Calendar",
+  "Desc": "N'ayez plus jamais à vous rappeler",
+  "content": "calendar.json",
+  "codename": "calendar",
+  "ext": ".json",
+  "bundle": {
+    "version": "1.0"
+  },
+  "progress": 10,
+  "steps": {
+    "Vérification": 3,
+    "Copie du fichier source": 3,
+    "Execution du fichier source": 3,
+    "Mise en place du JSON source": 1
+  }
+}
