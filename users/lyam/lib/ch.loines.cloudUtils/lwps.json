@@ -1,0 +1,17 @@
+{
+  "Name": "LoinesWebPress Social Version",
+  "Desc": "Vous voulez crée votre PROPRE Réseau Social GRATUITEMENT et SIMPLEMENT, LWPS est là!",
+  "content": "lwps.zip",
+  "codename": "lwps",
+  "ext": ".zip",
+  "bundle": {
+    "version": "2.0"
+  },
+  "progress": 10,
+  "steps": {
+    "Vérification": 3,
+    "Copie du fichier source": 3,
+    "Execution du fichier source": 3,
+    "Mise en place du JSON source": 1
+  }
+}

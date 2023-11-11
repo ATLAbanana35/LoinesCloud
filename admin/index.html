@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoinesCloud</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+    />
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background-color: #f0f3f4;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      .container_body {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 150px 20px 20px;
+      }
+
+      h1 {
+        color: #0061ff;
+        margin: 10px 0;
+      }
+
+      p {
+        font-size: 18px;
+        color: #2e2e2e;
+        margin-bottom: 20px;
+      }
+
+      #changingText {
+        font-weight: bold;
+        font-size: 24px;
+        color: #333;
+      }
+
+      .feature {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .features-container_body {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      button {
+        background-color: #0061ff;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #0040c9;
+      }
+
+      img {
+        width: 100%;
+        max-width: 400px;
+        margin-top: 20px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>LoinesCloud</h1>
+      <p>LoinesCloud n'est pas qu'un cloud, c'est un écosystème</p>
+      <button onclick="start()">Commencer</button>
+    </header>
+
+    <div class="container_body">
+      <div class="l">
+        <p>plus <span id="changingText"></span></p>
+        <div class="features-container_body">
+          <div class="feature">
+            <h2>Applications</h2>
+            <p>
+              LoinesCloud offre une gamme complète d'applications (quiz, CMS,
+              ToDoList, Calendrier)
+            </p>
+          </div>
+          <div class="feature">
+            <h2>Open Source</h2>
+            <p>
+              LoinesCloud est un service 100% open source, vous pouvez le
+              modifier, le changer, faire TOUT ce que vous voulez
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="r">
+        <p>LoinesCloud n'est pas qu'un cloud, c'est un écosystème</p>
+        <button onclick="start()">Commencer</button>
+      </div>
+    </div>
+    <img src="./loinescloudlogo.jpeg" alt="LoinesCloud" />
+    <script>
+      const changingTextElement = document.getElementById("changingText");
+      const texts = [
+        "Créatif",
+        "Gratuit",
+        "Intéressant",
+        "Développé",
+        "Efficace",
+      ];
+
+      let index = 0;
+      function openForm() {
+        document.getElementById("popupForm").style.display = "block";
+        document.querySelector(".loginPopup").style.top = "200px";
+      }
+      function closeForm() {
+        document.querySelector(".loginPopup").style.top = "-10px";
+        setTimeout(() => {
+          document.getElementById("popupForm").style.display = "none";
+        }, 300);
+      }
+      function changeText() {
+        changingTextElement.textContent = texts[index];
+        index = (index + 1) % texts.length;
+      }
+      changeText();
+      setInterval(changeText, 3000); // Change text every 3 seconds
+
+      function start() {
+        openForm();
+        // Ajoutez ici le code pour rediriger vers une autre page ou effectuer d'autres actions au clic sur le bouton.
+      }
+    </script>
+    <style>
+      .container {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+      .button {
+        outline: none;
+        height: 40px;
+        text-align: center;
+        width: 130px;
+        border-radius: 40px;
+        background: #fff;
+        border: 2px solid #1ecd97;
+        color: #1ecd97;
+        letter-spacing: 1px;
+        text-shadow: 0;
+        font-size: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        position: relative;
+      }
+      .button:hover {
+        color: white;
+        background: #1ecd97;
+      }
+      .button:active {
+        letter-spacing: 2px;
+      }
+      .button:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: "SUBMIT";
+      }
+      .onclic {
+        width: 40px;
+        border-color: #bbb;
+        border-width: 3px;
+        font-size: 0;
+        border-left-color: #1ecd97;
+        animation: rotating 2s 0.25s linear infinite;
+      }
+      .onclic:after {
+        content: "";
+      }
+      .onclic:hover {
+        color: #1ecd97;
+        background: white;
+      }
+      .validate {
+        font-size: 13px;
+        color: white;
+        background: #1ecd97;
+      }
+      .validate:after {
+        font-family: "FontAwesome";
+        content: "\f00c";
+      }
+      @keyframes rotating {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      .loginPopup {
+        position: absolute;
+        top: -10px;
+        transition: 0.5s;
+        text-align: center;
+        width: 100%;
+        text-align: center;
+      }
+      .formPopup {
+        display: none;
+        position: absolute;
+        left: 45%;
+        top: 5%;
+        transform: translate(-50%, 5%);
+        border: 3px solid #999999;
+        z-index: 9;
+      }
+      .formContainer {
+        max-width: 300px;
+        padding: 20px;
+        background-color: #fff;
+      }
+      .formContainer input[type="text"],
+      .formContainer input[type="password"] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 20px 0;
+        border: none;
+        background: #eee;
+      }
+      .formContainer input[type="text"]:focus,
+      .formContainer input[type="password"]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      .formContainer .btn {
+        padding: 12px 20px;
+        border: none;
+        background-color: #8ebf42;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 15px;
+        opacity: 0.8;
+      }
+      .formContainer .cancel {
+        background-color: #cc0000;
+      }
+      .formContainer .btn:hover,
+      .openButton:hover {
+        opacity: 1;
+      }
+    </style>
+    <script>
+      function submitForm() {
+        // Récupérer les valeurs des champs
+        var username = document.getElementById("email").value;
+        var password = document.getElementById("psw").value;
+
+        // Créer un objet FormData
+        var formData = new FormData();
+        formData.append("user", username);
+        formData.append("password", password);
+
+        // Créer une requête XMLHttpRequest
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "Ccloud.php", true);
+
+        // Envoyer la requête avec les données du formulaire
+        xhr.send(formData);
+
+        // Gérer la réponse
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            // Traitement de la réponse si nécessaire
+            console.log(xhr.responseText);
+            window.location =
+              "../users/" + document.getElementById("email").value;
+          }
+        };
+      }
+
+      $(function () {
+        $("#button").click(function () {
+          $("#button").addClass("onclic");
+          validate();
+        });
+
+        function validate() {
+          submitForm();
+          setTimeout(function () {
+            document.querySelector("#button").classList.remove("onclic");
+            document.querySelector("#button").classList.add("validate");
+            callback();
+          }, 2250);
+        }
+        function callback() {
+          setTimeout(function () {
+            $("#button").removeClass("validate");
+          }, 1250);
+        }
+      });
+    </script>
+    <div class="loginPopup">
+      <div class="formPopup" id="popupForm">
+        <form action="/action_page.php" class="formContainer">
+          <h2>Please Log in</h2>
+          <label for="email">
+            <strong>Username</strong>
+          </label>
+          <input
+            type="text"
+            id="email"
+            placeholder="Your Username"
+            name="email"
+            required
+          />
+          <label for="psw">
+            <strong>Password</strong>
+          </label>
+          <input
+            type="password"
+            id="psw"
+            placeholder="Your Password"
+            name="psw"
+            required
+          />
+          <div class="container">
+            <div class="button" id="button"></div>
+          </div>
+          <button type="button" class="btn cancel" onclick="closeForm()">
+            Close
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
