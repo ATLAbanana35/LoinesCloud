@@ -16,7 +16,7 @@ LoinesCloud is a cloud-based platform that provides a range of services includin
 
 To get started with LoinesCloud, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/loinescloud.git`
+1. Clone the repository: `git clone https://github.com/ATLAbanana35/loinescloud.git`
 2. Navigate to the project directory: `cd loinescloud`
 3. Set up the required dependencies: `php -S localhost:1234`
 4. Now you can access to the cloud by localhost:1234 /!\ One fonction is connected to the local Loines BDD, it will not work
